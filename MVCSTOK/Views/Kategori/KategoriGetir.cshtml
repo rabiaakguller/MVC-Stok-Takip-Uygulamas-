@@ -1,0 +1,38 @@
+﻿@model MVCSTOK.Models.Entity.kategoriler
+
+@{
+    ViewBag.Title = "KategoriGetir";
+    Layout = "~/Views/Shared/_MainLayoud.cshtml";
+}
+
+@using (Html.BeginForm("Güncelle", "Kategori" , FormMethod.Post))
+
+//3 parametre.
+
+//bir olay oldugunda neresi çalışacak
+//güncelle çalışacak
+
+// Güncellle nerede? Kategorilerde
+
+//Ne zaman çalışacak?
+//Biz bir şey gönderdiğimiz zaman post kısmı yani
+
+
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.KATEGORİID)
+        @Html.TextBoxFor(m => m.KATEGORİID, new { @class = "form-control" })
+
+        <br/>
+
+        @Html.LabelFor(m => m.KATEGORİAD)
+        @Html.TextBoxFor(m => m.KATEGORİAD ,new { @class = "form-control" })
+
+    </div>
+
+    <div>
+        <button class="btn btn-warning">Kategori Güncelle</button>
+    </div>
+
+}
+

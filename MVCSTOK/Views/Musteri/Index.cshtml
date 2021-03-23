@@ -1,0 +1,38 @@
+﻿@using MVCSTOK.Models.Entity
+@model List<musteriler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayoud.cshtml";
+}
+
+    <table class="table table-bordered ">
+
+
+        <tr>
+            <th>MÜŞTERİ ID</th>
+            <th>MÜŞTERİ ADI</th>
+            <th>MÜŞTERİ SOYADI </th>
+            <th>SİL</th>
+            <th>GÜNCELLE</th>
+
+        </tr>
+        <tbody>
+            @foreach (var mus in Model)
+            // (değişken türü değişken ismi için model)
+            {
+            <tr>
+                <th>@mus.MUSTERİID</th>
+                <td>@mus.MUSTERİAD</td>
+                <td>@mus.MUSTERİSOYAD</td>
+
+                <td><a href="/Musteri/SİL/@mus.MUSTERİID/" class= "btn btn-danger">SİL</a></td>
+                <td><a href="/Musteri/MusteriGetir/@mus.MUSTERİID" class= "btn btn-success">GÜNCELLE</a></td>
+
+               
+            </tr>
+            }
+        </tbody>
+
+    </table>
+
+    <a href="/MUSTERI/YeniMusteri/" class="btn btn-primary">YENİ MÜŞTERİ EKLE</a>
